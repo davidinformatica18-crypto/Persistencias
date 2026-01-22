@@ -7,14 +7,14 @@ FILE_PATH = "bibliote.json"
 
 # WRITE _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-def test_write_creates_file():
+def test_write():
 
     write(FILE_PATH, {"a": 1})
 
     assert os.path.exists(FILE_PATH)
 
 
-def test_write_content_is_correct():
+def test_write():
 
     write(FILE_PATH, {"libro": "Python"})
      
@@ -25,7 +25,7 @@ def test_write_content_is_correct():
 
 # READ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-def test_read_returns_dict():
+def test_read():
 
     write(FILE_PATH, {"x": 10})
 
@@ -36,7 +36,7 @@ def test_read_returns_dict():
 assert isinstance(data, dict)
 
 
-def test_read_correct_value():
+def test_read():
 
     write(FILE_PATH, {"valor": 5})
 
@@ -47,7 +47,7 @@ def test_read_correct_value():
 
 # UPDATE _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-def test_update_overwrites_content():
+def test_update():
 
     write(FILE_PATH, {"a": 1})
 
@@ -58,7 +58,7 @@ def test_update_overwrites_content():
     assert read(FILE_PATH) == {"a": 2}
 
 
-def test_update_changes_value():
+def test_update():
 
     update(FILE_PATH, {"estado": "ok"})
 
@@ -69,7 +69,7 @@ def test_update_changes_value():
 
 # CLEAR _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-def test_clear_empties_file():
+def test_clear():
 
     write(FILE_PATH, {"a": 1})
 
@@ -80,7 +80,7 @@ def test_clear_empties_file():
     assert read(FILE_PATH) == {}
 
 
-def test_clear_keeps_file():
+def test_clear():
 
     clear(FILE_PATH)
     
@@ -91,7 +91,7 @@ assert os.path.exists(FILE_PATH)
 
 #  DELETE _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-def test_delete_removes_file():
+def test_delete():
 
     write(FILE_PATH, {"a": 1})
 
@@ -102,7 +102,7 @@ def test_delete_removes_file():
     assert not os.path.exists(FILE_PATH)
 
 
-def test_delete_raises_error_if_missing():
+def test_delete():
 
     if os.path.exists(FILE_PATH):
 
