@@ -1,6 +1,6 @@
 import json
 
-def read(file_path):
+def read(file_path): # nombramos a la funcion archivo padre
 
     with open(file_path, "r") as archivo: # Abrimos el archivo en modo lectura ("r")
 
